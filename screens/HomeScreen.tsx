@@ -28,7 +28,6 @@ export default function HomeScreen() {
   const [items, setItems] = useState<any[]>([]);
   const [selectedItem, setSelectedItem] = useState<any | null>(null);
   const [isModalVisible, setModalVisible] = useState(false);
-  const [isConnected, setIsConnected] = useState<boolean>(false);
 
   useEffect(() => {
     initializeDatabase();
@@ -39,10 +38,6 @@ export default function HomeScreen() {
       fetchNotes();
     }, [])
   );
-
-  // useEffect(() => {
-  //   fetchNotes();
-  // }, [items]);  
 
   const fetchNotes = async () => {
     const result = await getAllNotes();
